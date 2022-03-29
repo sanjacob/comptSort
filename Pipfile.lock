@@ -97,11 +97,11 @@
         },
         "hypothesis": {
             "hashes": [
-                "sha256:1577ac8baa9c77ee3c946124c7b69551e127c4440f9e56fa6ed49bc73dabbf49",
-                "sha256:7cc9056edeab51ce195b3b6994f2446f0aac405d191cab7e2de5e159cb4c2bc2"
+                "sha256:15002eeecad55c83ad5cc583b160582f19ae71371ed3a93a091d1b73e1151f6d",
+                "sha256:35833b12079456a4512ba35d62166140e1d873c72f7e04f01d06ebd193b0e0cb"
             ],
             "index": "pypi",
-            "version": "==6.39.6"
+            "version": "==6.40.0"
         },
         "iniconfig": {
             "hashes": [
