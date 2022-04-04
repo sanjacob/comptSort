@@ -16,6 +16,7 @@
 # Boston, MA  02110-1301, USA.
 # Also available at https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
+from collections.abc import Sequence
 from typing import Any
 
 from .sorter import Sorter, in_order
@@ -25,7 +26,7 @@ class InsertionSort(Sorter):
   """Sort elements one at a time."""
 
   @staticmethod
-  def sort(uData: list[Any], asc: bool = False) -> None:
+  def sort(uData: Sequence[Any], asc: bool = True) -> None:
     for i, x in enumerate(uData):
       j = i - 1
       while j >= 0 and not in_order(uData[j], x, asc):

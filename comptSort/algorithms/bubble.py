@@ -16,6 +16,7 @@
 # Boston, MA  02110-1301, USA.
 # Also available at https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
+from collections.abc import Sequence
 from typing import Any
 
 from .sorter import Sorter, in_order
@@ -25,7 +26,7 @@ class BubbleSort(Sorter):
   """Repeatedly swap adjacent elements if in wrong order."""
 
   @staticmethod
-  def sort(uData: list[Any], asc: bool = True) -> None:
+  def sort(uData: Sequence[Any], asc: bool = True) -> None:
     n = len(uData)
 
     while n > 0:

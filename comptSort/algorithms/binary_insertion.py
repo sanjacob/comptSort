@@ -16,16 +16,23 @@
 # Boston, MA  02110-1301, USA.
 # Also available at https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
+from collections.abc import Sequence
 from typing import Any
 
+from .binary_search import binary_search
 from .sorter import Sorter, in_order
 
 
 class BinaryInsertionSort(Sorter):
-  """"""
+  """Insertion sort with a binary search optimisation."""
 
   @staticmethod
-  def sort(uData: list[Any], asc: bool = False) -> None:
+  def sort(uData: Sequence[Any], asc: bool = True) -> None:
     for i, x in enumerate(uData):
-      ...
-    raise NotImplementedError
+      if i:
+        j = i - 1
+        insert_point = binary_search(uData, x, 0, i, asc=asc)
+        while j >= insert_point:
+          uData[j+1] = uData[j]
+          j -= 1
+        uData[j+1] = x

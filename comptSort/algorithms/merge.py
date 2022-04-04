@@ -16,6 +16,7 @@
 # Boston, MA  02110-1301, USA.
 # Also available at https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
+from collections.abc import Sequence
 from typing import Any
 
 from .sorter import Sorter, in_order
@@ -24,5 +25,10 @@ from .sorter import Sorter, in_order
 class MergeSort(Sorter):
   """Divide and conquer."""
   @staticmethod
-  def sort(uData: list[Any], asc: bool = False) -> list[Any]:
+  def sort(uData: Sequence[Any], asc: bool = False) -> None:
+    n = len(uData)
+    while n > 1:
+      n //= 2
+      print(n)
+
     raise NotImplementedError

@@ -6,7 +6,7 @@ from comptSort import comptSort
 from hypothesis import assume, example, given
 from hypothesis import strategies as st
 
-unsorted_lists = st.lists(st.integers(), max_size=90)
+unsorted_lists = st.lists(st.integers())
 
 @given(unsorted_lists, st.booleans())
 def test_bubble(uData: list[Any], asc: bool):
@@ -20,7 +20,6 @@ def test_insertion(uData: list[Any], asc: bool):
   result = comptSort(uData, Sorting.INSERTION, asc=asc)
   assert result == expect
 
-@pytest.mark.skip(reason="no way of currently testing this")
 @given(unsorted_lists, st.booleans())
 def test_binary_insertion(uData: list[Any], asc: bool):
   expect = sorted(uData, reverse=not asc)

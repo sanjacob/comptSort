@@ -17,15 +17,19 @@
 # Also available at https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 import math
+from collections.abc import Callable
+
+from .sorter import in_order
 
 
-def binary_search(a, x, lo: int = 0, hi: int = None) -> int:
+def binary_search(a, x, lo: int = 0, hi: int = None, *, key: Callable = None, asc: bool = True) -> int:
+  """For the most part acts like bisect, with the added feature of asc/desc ordering."""
   if hi is None:
     hi = len(a)
 
   while lo < hi:
     mid = (lo+hi) // 2
-    if x < a[mid]:
+    if in_order(x, a[mid], asc):
       hi = mid
     else:
       lo = mid + 1

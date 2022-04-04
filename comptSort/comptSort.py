@@ -16,32 +16,45 @@
 # Boston, MA  02110-1301, USA.
 # Also available at https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
+from collections.abc import Sequence
 from typing import Any, Union
 
 from .algorithms import SortingAlgorithm
 
 
-def comptSort(uData: list[Any], sort: SortingAlgorithm, asc: bool = True) -> list[Any]:
+def comptSort(uData: Sequence[Any], sort: SortingAlgorithm | str, asc: bool = True) -> Sequence[Any]:
   """
   Return a sorted copy of a list.
-  :param list[Any] uData: The original, unsorted data.
+  :param Sequence[Any] uData: The original, unsorted data.
   :param str sort: A string specifying the sorting algorithm to be used.
   :param bool asc: If true, sort will be performed in ascending order.
   """
+  # Convert str to SortingAlgorithm
+  if isinstance(sort, str):
+    sort = SortingAlgorithm(sort)
   dataCopy = uData.copy()
   sort.get_sorter().sort(dataCopy, asc)
   return dataCopy
 
-def comptSortInPlace(uData: list[Any], sort: SortingAlgorithm, asc: bool = True) -> None:
+def comptSortInPlace(uData: Sequence[Any], sort: SortingAlgorithm | str, asc: bool = True) -> None:
   """
   Sort a list in place.
-  :param list[Any] uData: The original, unsorted data.
-  :param str sort: A string specifying the sorting algorithm to be used.
+  :param Sequence[Any] uData: The original, unsorted data.
+  :param SortingAlgorithm | str sort: A string specifying the sorting algorithm to be used.
   :param bool asc: If true, sort will be performed in ascending order.
   """
+  # Convert str to SortingAlgorithm
+  if isinstance(sort, str):
+    sort = SortingAlgorithm(sort)
   sort.get_sorter().sort(dataCopy, asc)
 
 
 def from_file(filename: str):
   with open(filename) as f:
     print(f.read().splitlines())
+
+def main(argv: Sequence[str] | None = None) -> int:
+  ...
+
+if __name__ == '__main__':
+    raise SystemExit(main())

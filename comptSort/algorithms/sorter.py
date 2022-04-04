@@ -17,6 +17,7 @@
 # Also available at https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 from abc import ABC, abstractmethod
+from collections.abc import Sequence
 from typing import Any
 
 
@@ -25,7 +26,7 @@ class Sorter(ABC):
 
   @classmethod
   @abstractmethod
-  def sort(cls, uData: list[Any], asc: bool = True) -> None:
+  def sort(cls, uData: Sequence[Any], asc: bool = True) -> None:
     """Sorts a list in place"""
     ...
 
