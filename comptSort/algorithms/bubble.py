@@ -32,9 +32,13 @@ class BubbleSort(Sorter):
     while n > 0:
       last_swapped = 0
 
+      # Iterate over list
       for i in range(n - 1):
+        # Not in order
         if not in_order(uData[i], uData[i + 1], asc):
-          # swap
+          # Swap
           uData[i], uData[i+1] = uData[i+1], uData[i]
           last_swapped = i + 1
+      # Only iterate until last swapped element
+      # for better efficiency
       n = last_swapped

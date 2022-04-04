@@ -27,9 +27,12 @@ class InsertionSort(Sorter):
 
   @staticmethod
   def sort(uData: Sequence[Any], asc: bool = True) -> None:
+    # Index and element in list
     for i, x in enumerate(uData):
       j = i - 1
+      # Step backwards, swapping until right position found
       while j >= 0 and not in_order(uData[j], x, asc):
         uData[j+1] = uData[j]
         j -= 1
+      # Move current element to right position
       uData[j+1] = x

@@ -32,6 +32,7 @@ def comptSort(uData: Sequence[Any], sort: SortingAlgorithm | str, asc: bool = Tr
   # Convert str to SortingAlgorithm
   if isinstance(sort, str):
     sort = SortingAlgorithm(sort)
+  # Only sort copy of data
   dataCopy = uData.copy()
   sort.get_sorter().sort(dataCopy, asc)
   return dataCopy
@@ -46,6 +47,7 @@ def comptSortInPlace(uData: Sequence[Any], sort: SortingAlgorithm | str, asc: bo
   # Convert str to SortingAlgorithm
   if isinstance(sort, str):
     sort = SortingAlgorithm(sort)
+  # Only sort copy of data
   sort.get_sorter().sort(dataCopy, asc)
 
 

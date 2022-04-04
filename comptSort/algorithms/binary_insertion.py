@@ -31,8 +31,10 @@ class BinaryInsertionSort(Sorter):
     for i, x in enumerate(uData):
       if i:
         j = i - 1
-        insert_point = binary_search(uData, x, 0, i, asc=asc)
-        while j >= insert_point:
+        # Get insertion index using binary search
+        insert_i = binary_search(uData, x, 0, i, asc=asc)
+        # Swap until in right position
+        while j >= insert_i:
           uData[j+1] = uData[j]
           j -= 1
         uData[j+1] = x

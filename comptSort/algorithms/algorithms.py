@@ -34,6 +34,7 @@ class SortingAlgorithm(str, Enum):
   QUICK = 'quick'
 
   def get_sorter(self):
+    """Returns the class associated with the sorting algorithm."""
     sorters = {
       self.BUBBLE: BubbleSort,
       self.INSERTION: InsertionSort,

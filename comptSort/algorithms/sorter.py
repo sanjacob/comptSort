@@ -27,10 +27,10 @@ class Sorter(ABC):
   @classmethod
   @abstractmethod
   def sort(cls, uData: Sequence[Any], asc: bool = True) -> None:
-    """Sorts a list in place"""
+    """Sorts a list in place."""
     ...
 
 
 def in_order(a: Any, b: Any, asc: bool = True) -> bool:
-  """Compares two items"""
+  """Compares two items in ascending or descending order."""
   return ((b < a) and not asc) or ((a < b) and asc)
