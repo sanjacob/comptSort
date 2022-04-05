@@ -16,6 +16,8 @@
 # Boston, MA  02110-1301, USA.
 # Also available at https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
+from __future__ import annotations
+
 from collections.abc import Sequence
 from typing import Any, Union
 
