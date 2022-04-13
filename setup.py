@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+
+"""Setup script for comptSort."""
+
 from comptSort.__about__ import (__author__, __email__, __license__,
                                  __summary__, __title__, __uri__, __version__)
 from setuptools import setup

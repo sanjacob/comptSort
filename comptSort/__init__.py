@@ -1,10 +1,19 @@
 #!/usr/bin/env python3
 
 """
-comptSort
+comptSort.
+
 ~~~~~~~~~~
 
 A sorting function.
+
+Usage:
+    >>> from comptSort import comptSort
+    >>> comptSort([2,3,1], 'merge', asc=True)
+    [1,2,3]
+    >>> from comptSort import SortingAlgorithm as Sorting
+    >>> comptSort([2,3,1], Sorting.MERGE, asc=True)
+    [1,2,3]
 
 :copyright: (c) 2022, Jacob Sánchez Pérez.
 :license: GPL v2.0, see LICENSE for more details.

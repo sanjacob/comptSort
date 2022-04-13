@@ -11,7 +11,8 @@ def list_and_index(draw, elements=integers()):
     i = draw(integers(min_value=0, max_value=len(xs) - 1))
     return (xs, i)
 
+
 @given(list_and_index())
 def test_bisect(list_index):
-  """Compare the results of custom binary search function against bisect"""
-  assert binary_search(*list_index) == bisect(*list_index)
+    """Compare the results of custom binary search function against bisect"""
+    assert binary_search(*list_index) == bisect(*list_index)

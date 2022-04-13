@@ -1,5 +1,6 @@
 """
-comptSort
+comptSort Information.
+
 Jacob Sánchez Pérez
 Copyright (C) 2022
 """

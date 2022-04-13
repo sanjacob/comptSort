@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""Contains comptSort functions."""
+
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
 # as published by the Free Software Foundation; either version 2
@@ -19,46 +21,40 @@
 from __future__ import annotations
 
 from collections.abc import Sequence
-from typing import Any, Union
+from typing import Any
 
 from .algorithms import SortingAlgorithm
 
+sort_algorithm = SortingAlgorithm | str
 
-def comptSort(uData: Sequence[Any], sort: SortingAlgorithm | str, asc: bool = True) -> Sequence[Any]:
-  """
-  Return a sorted copy of a list.
-  :param Sequence[Any] uData: The original, unsorted data.
-  :param str sort: A string specifying the sorting algorithm to be used.
-  :param bool asc: If true, sort will be performed in ascending order.
-  """
-  # Convert str to SortingAlgorithm
-  if isinstance(sort, str):
-    sort = SortingAlgorithm(sort)
-  # Only sort copy of data
-  dataCopy = uData.copy()
-  sort.get_sorter().sort(dataCopy, asc)
-  return dataCopy
+
+def comptSort(uData: Sequence[Any], sort: sort_algorithm, asc: bool = True) -> Sequence[Any]:
+    """
+    Return a sorted copy of a list.
+
+    :param Sequence[Any] uData: The original, unsorted data.
+    :param str sort: A string specifying the sorting algorithm to be used.
+    :param bool asc: If true, sort will be performed in ascending order.
+    """
+    # Convert str to SortingAlgorithm
+    if isinstance(sort, str):
+        sort = SortingAlgorithm(sort)
+    # Only sort copy of data
+    dataCopy = uData.copy()
+    sort.get_sorter().sort(dataCopy, asc)
+    return dataCopy
+
 
 def comptSortInPlace(uData: Sequence[Any], sort: SortingAlgorithm | str, asc: bool = True) -> None:
-  """
-  Sort a list in place.
-  :param Sequence[Any] uData: The original, unsorted data.
-  :param SortingAlgorithm | str sort: A string specifying the sorting algorithm to be used.
-  :param bool asc: If true, sort will be performed in ascending order.
-  """
-  # Convert str to SortingAlgorithm
-  if isinstance(sort, str):
-    sort = SortingAlgorithm(sort)
-  # Only sort copy of data
-  sort.get_sorter().sort(dataCopy, asc)
+    """
+    Sort a list in place.
 
-
-def from_file(filename: str):
-  with open(filename) as f:
-    print(f.read().splitlines())
-
-def main(argv: Sequence[str] | None = None) -> int:
-  ...
-
-if __name__ == '__main__':
-    raise SystemExit(main())
+    :param Sequence[Any] uData: The original, unsorted data.
+    :param SortingAlgorithm | str sort: A string specifying the sorting algorithm to be used.
+    :param bool asc: If true, sort will be performed in ascending order.
+    """
+    # Convert str to SortingAlgorithm
+    if isinstance(sort, str):
+        sort = SortingAlgorithm(sort)
+    # Only sort copy of data
+    sort.get_sorter().sort(uData, asc)
