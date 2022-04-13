@@ -38,8 +38,8 @@ Usage:
 from .__about__ import (__author__, __copyright__, __email__, __license__,
                         __summary__, __title__, __uri__, __version__)
 from .algorithms import binary_search
-from .comptSort import SortingAlgorithm, comptSort
+from .comptSort import SortingAlgorithm, comptSort, comptSortInPlace
 
 __all__ = ['__title__', '__summary__', '__uri__', '__version__',
            '__author__', '__email__', '__license__', '__copyright__',
-           'comptSort', 'SortingAlgorithm', 'binary_search']
+           'comptSort', 'comptSortInPlace', 'SortingAlgorithm', 'binary_search']

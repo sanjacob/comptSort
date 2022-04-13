@@ -28,14 +28,17 @@ class QuickSort(Sorter):
 
     @staticmethod
     def sort(uData: Sequence[Any], asc: bool = True) -> None:
-        """Sort a sequence using quicksort."""
+        """Sort a sequence using quicksort.
+
+        This implementation uses recursion and thus may experience issues with large lists.
+        """
         QuickSort._quicksort(uData, 0, len(uData) - 1, asc)
 
     @classmethod
-    def _partition(cls, a, lo, hi, *, asc: bool = True, random_pivot: bool = True):
-        # Random pivot support
-        pivot_i = randrange(lo, hi) if random_pivot else hi
-        pivot = a[pivot_i]
+    def _partition(cls, a, lo, hi, *, asc: bool = True, random_pivot: bool = False):
+        # Random pivot not yet supported
+        # pivot_i = randrange(lo, hi) if random_pivot else hi
+        pivot = a[hi]
         top = lo
 
         for i in range(lo, hi):

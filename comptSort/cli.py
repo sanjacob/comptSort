@@ -28,7 +28,7 @@ def _from_file(filename: str, as_ints: bool = False):
 def main(argv: Sequence[str] | None = None) -> int:
     """Sorting Function comptSort Command Line Interface."""
     parser = argparse.ArgumentParser(
-        'comptSort', description='Test the comptSort library by sorting lists.')
+        'comptSort', description='Test the comptSort library by sorting lines of files.')
 
     parser.add_argument('file', help='file containing items to sort')
     parser.add_argument('-a', '--algorithm', help='algorithm to sort with',
@@ -36,14 +36,22 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument('-d', '--descending', '--reverse',
                         help='order sequence in descending order', action='store_true')
     parser.add_argument('-i', '--force-integers',
-                        help='parse lines from files as integers', action='store_true')
+                        help='parse lines from files as integers (by default strings)',
+                        action='store_true')
 
     args = parser.parse_args()
 
     if args.file is not None:
-        uData = _from_file(args.file, args.force_integers)
-        c = comptSort(uData, sort=args.algorithm, asc=not args.descending)
-        print(c)
+        try:
+            uData = _from_file(args.file, args.force_integers)
+        except ValueError as e:
+            print('Error while parsing file: File must contain only integers')
+            print(e)
+        except OSError as e:
+            print(e)
+        else:
+            c = comptSort(uData, sort=args.algorithm, asc=not args.descending)
+            print(c)
     return 0
 
 

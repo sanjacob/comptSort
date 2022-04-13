@@ -34,7 +34,7 @@ __title__ = "comptSort"
 __summary__ = "Sorting function."
 __uri__ = "https://github.com/jacobszpz/comptSort"
 
-__version__ = "0.0.0"
+__version__ = "0.1.0"
 
 __author__ = "Jacob Sánchez"
 __email__ = "jacobszpz@protonmail.com"
