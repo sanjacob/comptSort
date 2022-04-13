@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""Contains implementation of quick sort."""
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -24,30 +24,31 @@ from .sorter import Sorter, in_order
 
 
 class QuickSort(Sorter):
-  """Swap elements on both sides of a pivot"""
+    """Swap elements on both sides of a pivot."""
 
-  @staticmethod
-  def sort(uData: Sequence[Any], asc: bool = True) -> None:
-    QuickSort._quicksort(uData, 0, len(uData) - 1, asc)
+    @staticmethod
+    def sort(uData: Sequence[Any], asc: bool = True) -> None:
+        """Sort a sequence using quicksort."""
+        QuickSort._quicksort(uData, 0, len(uData) - 1, asc)
 
-  @classmethod
-  def _partition(cls, a, lo, hi, *, asc: bool = True, random_pivot: bool = True):
-    # Random pivot support
-    pivot_i = randrange(lo, hi) if random_pivot else hi
-    pivot = a[hi]
-    top = lo
+    @classmethod
+    def _partition(cls, a, lo, hi, *, asc: bool = True, random_pivot: bool = True):
+        # Random pivot support
+        pivot_i = randrange(lo, hi) if random_pivot else hi
+        pivot = a[pivot_i]
+        top = lo
 
-    for i in range(lo, hi):
-      if in_order(a[i], pivot, asc):
-        a[i], a[top] = a[top], a[i]
-        top += 1
+        for i in range(lo, hi):
+            if in_order(a[i], pivot, asc):
+                a[i], a[top] = a[top], a[i]
+                top += 1
 
-    a[hi], a[top] = a[top], a[hi]
-    return top
+        a[hi], a[top] = a[top], a[hi]
+        return top
 
-  @classmethod
-  def _quicksort(cls, a, lo, hi, asc: bool = True):
-    if hi > lo:
-      pivot = cls._partition(a, lo, hi, asc=asc)
-      cls._quicksort(a, lo, pivot - 1, asc=asc)
-      cls._quicksort(a, pivot + 1, hi, asc=asc)
+    @classmethod
+    def _quicksort(cls, a, lo, hi, asc: bool = True):
+        if hi > lo:
+            pivot = cls._partition(a, lo, hi, asc=asc)
+            cls._quicksort(a, lo, pivot - 1, asc=asc)
+            cls._quicksort(a, pivot + 1, hi, asc=asc)

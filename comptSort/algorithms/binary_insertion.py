@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""Contains implementation of insertion sort with binary search."""
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -20,21 +20,22 @@ from collections.abc import Sequence
 from typing import Any
 
 from .binary_search import binary_search
-from .sorter import Sorter, in_order
+from .sorter import Sorter
 
 
 class BinaryInsertionSort(Sorter):
-  """Insertion sort with a binary search optimisation."""
+    """Insertion sort with a binary search optimisation."""
 
-  @staticmethod
-  def sort(uData: Sequence[Any], asc: bool = True) -> None:
-    for i, x in enumerate(uData):
-      if i:
-        j = i - 1
-        # Get insertion index using binary search
-        insert_i = binary_search(uData, x, 0, i, asc=asc)
-        # Swap until in right position
-        while j >= insert_i:
-          uData[j+1] = uData[j]
-          j -= 1
-        uData[j+1] = x
+    @staticmethod
+    def sort(uData: Sequence[Any], asc: bool = True) -> None:
+        """Sort a sequence using insertion sort with binary search."""
+        for i, x in enumerate(uData):
+            if i:
+                j = i - 1
+                # Get insertion index using binary search
+                insert_i = binary_search(uData, x, 0, i, asc=asc)
+                # Swap until in right position
+                while j >= insert_i:
+                    uData[j+1] = uData[j]
+                    j -= 1
+                uData[j+1] = x

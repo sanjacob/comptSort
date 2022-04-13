@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""Contains sorting algorithm enum."""
+
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
 # as published by the Free Software Foundation; either version 2
@@ -26,20 +28,21 @@ from .quick import QuickSort
 
 
 class SortingAlgorithm(str, Enum):
-  """Types of sorting algorithms."""
-  BUBBLE = 'bubble'
-  INSERTION = 'insertion'
-  BIN_INSERTION = 'bin_insertion'
-  MERGE = 'merge'
-  QUICK = 'quick'
+    """Types of sorting algorithms."""
 
-  def get_sorter(self):
-    """Returns the class associated with the sorting algorithm."""
-    sorters = {
-      self.BUBBLE: BubbleSort,
-      self.INSERTION: InsertionSort,
-      self.BIN_INSERTION: BinaryInsertionSort,
-      self.MERGE: MergeSort,
-      self.QUICK: QuickSort
-    }
-    return sorters[self]
+    BUBBLE = 'bubble'
+    INSERTION = 'insertion'
+    BIN_INSERTION = 'bin_insertion'
+    MERGE = 'merge'
+    QUICK = 'quick'
+
+    def get_sorter(self):
+        """Return the class associated with the sorting algorithm."""
+        sorters = {
+          self.BUBBLE: BubbleSort,
+          self.INSERTION: InsertionSort,
+          self.BIN_INSERTION: BinaryInsertionSort,
+          self.MERGE: MergeSort,
+          self.QUICK: QuickSort
+        }
+        return sorters[self]

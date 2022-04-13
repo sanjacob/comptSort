@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""Contains implementation of insertion sort."""
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -23,16 +23,17 @@ from .sorter import Sorter, in_order
 
 
 class InsertionSort(Sorter):
-  """Sort elements one at a time."""
+    """Sort elements one at a time."""
 
-  @staticmethod
-  def sort(uData: Sequence[Any], asc: bool = True) -> None:
-    # Index and element in list
-    for i, x in enumerate(uData):
-      j = i - 1
-      # Step backwards, swapping until right position found
-      while j >= 0 and not in_order(uData[j], x, asc):
-        uData[j+1] = uData[j]
-        j -= 1
-      # Move current element to right position
-      uData[j+1] = x
+    @staticmethod
+    def sort(uData: Sequence[Any], asc: bool = True) -> None:
+        """Sort a sequence using insertion sort."""
+        # Index and element in list
+        for i, x in enumerate(uData):
+            j = i - 1
+            # Step backwards, swapping until right position found
+            while j >= 0 and not in_order(uData[j], x, asc):
+                uData[j+1] = uData[j]
+                j -= 1
+            # Move current element to right position
+            uData[j+1] = x

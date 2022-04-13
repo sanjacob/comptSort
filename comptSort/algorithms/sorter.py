@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""Sorter interface."""
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -22,15 +22,15 @@ from typing import Any
 
 
 class Sorter(ABC):
-  """Interface that describes a sorting algorithm."""
+    """Interface that describes a sorting algorithm."""
 
-  @classmethod
-  @abstractmethod
-  def sort(cls, uData: Sequence[Any], asc: bool = True) -> None:
-    """Sorts a list in place."""
-    ...
+    @classmethod
+    @abstractmethod
+    def sort(cls, uData: Sequence[Any], asc: bool = True) -> None:
+        """Sorts a list in place."""
+        ...
 
 
 def in_order(a: Any, b: Any, asc: bool = True) -> bool:
-  """Compares two items in ascending or descending order."""
-  return ((b < a) and not asc) or ((a < b) and asc)
+    """Compare two items in ascending or descending order."""
+    return ((b < a) and not asc) or ((a < b) and asc)

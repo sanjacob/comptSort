@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""Contains implementation of custom bisect."""
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -16,25 +16,24 @@
 # Boston, MA  02110-1301, USA.
 # Also available at https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-import math
 from collections.abc import Callable
 
 from .sorter import in_order
 
 
 def binary_search(a, x, lo: int = 0, hi: int = None, *, key: Callable = None, asc: bool = True) -> int:
-  """For the most part acts like bisect, with the added feature of asc/desc ordering."""
-  # By default, high limit is the length of the sequence
-  if hi is None:
-    hi = len(a)
+    """For the most part acts like bisect, with the added feature of asc/desc ordering."""
+    # By default, high limit is the length of the sequence
+    if hi is None:
+        hi = len(a)
 
-  while lo < hi:
-    # Calculate middle of list
-    mid = (lo+hi) // 2
-    if in_order(x, a[mid], asc):
-      # Use lower half of list
-      hi = mid
-    else:
-      # Use higher half of list
-      lo = mid + 1
-  return hi
+    while lo < hi:
+        # Calculate middle of list
+        mid = (lo+hi) // 2
+        if in_order(x, a[mid], asc):
+            # Use lower half of list
+            hi = mid
+        else:
+            # Use higher half of list
+            lo = mid + 1
+    return hi

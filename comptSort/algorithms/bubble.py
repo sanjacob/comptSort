@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""Contains implementation of bubble sort."""
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -23,22 +23,23 @@ from .sorter import Sorter, in_order
 
 
 class BubbleSort(Sorter):
-  """Repeatedly swap adjacent elements if in wrong order."""
+    """Repeatedly swap adjacent elements if in wrong order."""
 
-  @staticmethod
-  def sort(uData: Sequence[Any], asc: bool = True) -> None:
-    n = len(uData)
+    @staticmethod
+    def sort(uData: Sequence[Any], asc: bool = True) -> None:
+        """Sort a sequence using bubble sort."""
+        n = len(uData)
 
-    while n > 0:
-      last_swapped = 0
+        while n > 0:
+            last_swapped = 0
 
-      # Iterate over list
-      for i in range(n - 1):
-        # Not in order
-        if not in_order(uData[i], uData[i + 1], asc):
-          # Swap
-          uData[i], uData[i+1] = uData[i+1], uData[i]
-          last_swapped = i + 1
-      # Only iterate until last swapped element
-      # for better efficiency
-      n = last_swapped
+            # Iterate over list
+            for i in range(n - 1):
+                # Not in order
+                if not in_order(uData[i], uData[i + 1], asc):
+                    # Swap
+                    uData[i], uData[i+1] = uData[i+1], uData[i]
+                    last_swapped = i + 1
+            # Only iterate until last swapped element
+            # for better efficiency
+            n = last_swapped
