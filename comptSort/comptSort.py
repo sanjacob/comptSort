@@ -25,10 +25,8 @@ from typing import Any
 
 from .algorithms import SortingAlgorithm
 
-sort_algorithm = SortingAlgorithm | str
 
-
-def comptSort(uData: Sequence[Any], sort: sort_algorithm, asc: bool = True) -> Sequence[Any]:
+def comptSort(uData: Sequence[Any], sort: SortingAlgorithm | str, asc: bool = True) -> Sequence[Any]:
     """
     Return a sorted copy of a list.
 

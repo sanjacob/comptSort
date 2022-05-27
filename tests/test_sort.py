@@ -1,7 +1,8 @@
-from comptSort import SortingAlgorithm as Sorting
-from comptSort import comptSort
 from hypothesis import given
 from hypothesis import strategies as st
+
+from comptSort import SortingAlgorithm as Sorting
+from comptSort import comptSort
 
 # Test with lists of integers and characters
 unsorted_lists = st.one_of(st.lists(st.integers()), st.lists(st.characters()))

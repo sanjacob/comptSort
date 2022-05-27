@@ -1,8 +1,9 @@
 from bisect import bisect
 
-from comptSort import binary_search
 from hypothesis import given
 from hypothesis.strategies import composite, integers, lists
+
+from comptSort import binary_search
 
 
 @composite

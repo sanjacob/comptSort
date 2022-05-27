@@ -2,9 +2,10 @@
 
 """Setup script for comptSort."""
 
+from setuptools import setup
+
 from comptSort.__about__ import (__author__, __email__, __license__,
                                  __summary__, __title__, __uri__, __version__)
-from setuptools import setup
 
 setup(
     name=__title__,

@@ -35,9 +35,12 @@ class QuickSort(Sorter):
         QuickSort._quicksort(uData, 0, len(uData) - 1, asc)
 
     @classmethod
-    def _partition(cls, a, lo, hi, *, asc: bool = True, random_pivot: bool = False):
-        # Random pivot not yet supported
-        # pivot_i = randrange(lo, hi) if random_pivot else hi
+    def _partition(cls, a, lo, hi, *, asc: bool = True, random_pivot: bool = True):
+        # Random pivotting
+        if random_pivot:
+            pivot_i = randrange(lo, hi + 1)
+            a[hi], a[pivot_i] = a[pivot_i], a[hi]
+
         pivot = a[hi]
         top = lo
 
