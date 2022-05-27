@@ -11,7 +11,7 @@ from . import comptSort
 algorithms = ['bubble', 'insertion', 'bin_insertion', 'merge', 'quick']
 
 
-def _from_file(filename: str, as_ints: bool = False):
+def from_file(filename: str, as_ints: bool = False) -> list[int | str]:
     """Read items from file, each per line."""
     items = []
 
@@ -38,20 +38,35 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument('-i', '--force-integers',
                         help='parse lines from files as integers (by default strings)',
                         action='store_true')
+    parser.add_argument('-o', '--output', help='write sorted lines to file')
 
     args = parser.parse_args()
 
     if args.file is not None:
+        # Gather data from file
         try:
-            uData = _from_file(args.file, args.force_integers)
+            uData = from_file(args.file, args.force_integers)
         except ValueError as e:
             print('Error while parsing file: File must contain only integers')
             print(e)
         except OSError as e:
             print(e)
         else:
-            c = comptSort(uData, sort=args.algorithm, asc=not args.descending)
-            print(c)
+            # Sort data
+            sData = comptSort(uData, sort=args.algorithm, asc=not args.descending)
+            # Write to file
+            if args.output is not None:
+                # Gently attempt to write
+                try:
+                    with open(args.output, 'w') as output:
+                        # Add line endings
+                        output.writelines([f'{line}\n' for line in sData])
+                except OSError as e:
+                    print(e)
+            else:
+                # Print lines instead of list
+                for line in sData:
+                    print(line)
     return 0
 
 
