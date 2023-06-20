@@ -568,11 +568,11 @@
         },
         "tox": {
             "hashes": [
-                "sha256:52241851a7b0cd7de07d6ef067a13b092d2a4f82fe9048efb2444aed1708d713",
-                "sha256:58c7c2acce2f3d44cd1b359349557162336288ecf19ef53ccda89c9cee0ad9c4"
+                "sha256:2946a0bb38924c3a9f9575c7fb4ca1f4c11a7c69c61592f176778892155cb50c",
+                "sha256:9e2c5091a117d03b583c57c4c40aecd068099c17d40520e7b165e85c19334534"
             ],
             "index": "pypi",
-            "version": "==4.6.2"
+            "version": "==4.6.3"
         },
         "twine": {
             "hashes": [
