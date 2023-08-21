@@ -315,7 +315,7 @@
                 "sha256:ce785cf81a7bdade534297ef9e490ddff800d956625020ab2ec2780a556c313e",
                 "sha256:d0d651aa754ef58d75cec6edfbd21259d93810b73f6ec246436a21b7841908de"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==41.0.3"
         },
         "distlib": {
@@ -351,11 +351,11 @@
         },
         "hypothesis": {
             "hashes": [
-                "sha256:63dc6b094b52da6180ca50edd63bf08184bc96810f8624fdbe66578aaf377993",
-                "sha256:75d74da36fd3837b5b3fe15211dabc7389e78d882bf2c91bab2184ccf91fe64c"
+                "sha256:e99c445140e43f1cceda07b569f2f2d920d95435c6b0e6b507b35b01bb025e9d",
+                "sha256:f52ac4180a16208224e3d648fbf0fef8b9ca24863ba4b41bfef30a78c42646bd"
             ],
             "index": "pypi",
-            "version": "==6.80.0"
+            "version": "==6.82.6"
         },
         "idna": {
             "hashes": [
@@ -486,11 +486,11 @@
         },
         "pyproject-api": {
             "hashes": [
-                "sha256:14cf09828670c7b08842249c1f28c8ee6581b872e893f81b62d5465bec41502f",
-                "sha256:ffb5b2d7cad43f5b2688ab490de7c4d3f6f15e0b819cb588c4b771567c9729eb"
+                "sha256:8d41f3f0c04f0f6a830c27b1c425fa66699715ae06d8a054a1c5eeaaf8bfb145",
+                "sha256:ca462d457880340ceada078678a296ac500061cef77a040e1143004470ab0046"
             ],
-            "markers": "python_version >= '3.7'",
-            "version": "==1.5.3"
+            "markers": "python_version >= '3.8'",
+            "version": "==1.5.4"
         },
         "pyproject-hooks": {
             "hashes": [
@@ -510,11 +510,11 @@
         },
         "readme-renderer": {
             "hashes": [
-                "sha256:9f77b519d96d03d7d7dce44977ba543090a14397c4f60de5b6eb5b8048110aa4",
-                "sha256:e18feb2a1e7706f2865b81ebb460056d93fb29d69daa10b223c00faa7bd9a00a"
+                "sha256:4f4b11e5893f5a5d725f592c5a343e0dc74f5f273cb3dcf8c42d9703a27073f7",
+                "sha256:a38243d5b6741b700a850026e62da4bd739edc7422071e95fd5c4bb60171df86"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==40.0"
+            "version": "==41.0"
         },
         "requests": {
             "hashes": [
