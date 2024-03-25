@@ -596,12 +596,12 @@
         },
         "tox": {
             "hashes": [
-                "sha256:b03754b6ee6dadc70f2611da82b4ed8f625fcafd247e15d1d0cb056f90a06d3b",
-                "sha256:f0ad758c3bbf7e237059c929d3595479363c3cdd5a06ac3e49d1dd020ffbee45"
+                "sha256:0defb44f6dafd911b61788325741cc6b2e12ea71f987ac025ad4d649f1f1a104",
+                "sha256:2900c4eb7b716af4a928a7fdc2ed248ad6575294ed7cfae2ea41203937422847"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==4.14.1"
+            "version": "==4.14.2"
         },
         "twine": {
             "hashes": [
